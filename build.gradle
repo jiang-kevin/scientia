@@ -17,13 +17,17 @@ minecraft {
 
 repositories {
     maven { url = "http://maven.fabricmc.net/" }
+    maven {
+        name = "Ladysnake Mods"
+        url = 'https://ladysnake.jfrog.io/artifactory/mods'
+    }
 }
 
 dependencies {
     //to change the versions see the gradle.properties file
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"p
 
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
@@ -32,6 +36,13 @@ dependencies {
 
     // PSA: Some older mods, compiled on Loom 0.2.1, might have outdated Maven POMs.
     // You may need to force-disable transitiveness on them.
+
+    // Replace modImplementation with modApi if you expose components in your own API
+    modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-base:${project.cca_version}"
+    include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-base:${project.cca_version}"
+    modImplementation "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-entity:${project.cca_version}"
+    include "io.github.onyxstudios.Cardinal-Components-API:cardinal-components-entity:${project.cca_version}"
+
 }
 
 processResources {

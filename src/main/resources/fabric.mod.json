@@ -33,5 +33,11 @@
   },
   "suggests": {
     "flamingo": "*"
+  },
+
+  "custom": {
+    "cardinal-components": [
+      "scientia:mining_xp"
+    ]
   }
 }

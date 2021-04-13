@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.monachrom.scientia.Scientia"
+    ],
+    "cardinal-components": [
+      "net.monachrom.scientia.components.ModComponents"
     ]
   },
   "mixins": [

@@ -8,11 +8,13 @@ import nerdhub.cardinal.components.api.util.RespawnCopyStrategy
 import net.minecraft.util.Identifier
 import net.monachrom.scientia.util.Constants
 
-object ModComponents : EntityComponentInitializer {
+class ModComponents : EntityComponentInitializer {
 
-    // Components
-    val MINING_SKILL: ComponentKey<MiningSkill> =
-        ComponentRegistry.getOrCreate(Identifier(Constants.MOD_ID, "mining_xp"), MiningSkill::class.java)
+    companion object {
+        // Components
+        val MINING_SKILL: ComponentKey<MiningSkill> =
+            ComponentRegistry.getOrCreate(Identifier(Constants.MOD_ID, "mining_xp"), MiningSkill::class.java)
+    }
 
     override fun registerEntityComponentFactories(registry: EntityComponentFactoryRegistry) {
         registry.registerForPlayers(MINING_SKILL, { MiningSkill() }, RespawnCopyStrategy.ALWAYS_COPY)

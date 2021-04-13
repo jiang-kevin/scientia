@@ -5,7 +5,7 @@ import net.minecraft.nbt.CompoundTag
 
 open class Skill(val nbtTag: String) : Component {
 
-    var xp: Int = 0;
+    var xp: Int = 0
 
     fun addXP(amount: Int) {
         this.xp += amount
